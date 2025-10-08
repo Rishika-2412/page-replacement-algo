@@ -1,56 +1,160 @@
-/* Purple shades for cards and headings */
-.bg-purple-card { background-color: #f0e6ff; }
-.bg-purple-heading { background-color: #d6c1ff; color: #4b0082; }
-.text-purple-dark { color: #4b0082; }
+:root {
+  --bg: #f4f7fb;
+  --card: #fff;
+  --accent: #6c5ce7;
+  --muted: #6b7280
+}
 
-.block, .full-width-table {
-  transition: box-shadow 0.3s, transform 0.2s;
-  cursor: pointer;
+body {
+  font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  margin: 0;
+  background: linear-gradient(180deg, #f7f9ff 0%, #eef2ff 100%);
+  color: #0f172a
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  margin-top: 18px
+}
+
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06)
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px
+}
+
+input[type=text],
+select,
+input[type=number] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e6eef8;
+  background: #fbfdff
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 12px;
   border-radius: 8px;
+  cursor: pointer
 }
 
-/* Hover shadow effect */
-.block:hover, .full-width-table:hover {
-  box-shadow: 0 0 15px rgba(200,200,200,0.5);
-  transform: translateY(-2px);
-}
-
-/* Full-width table but padded */
-.full-width-table {
-  width: calc(100% - 40px);
-  margin-left: 20px;
+.btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px
 }
 
 table {
-  width: 100% !important;
-  border-collapse: collapse;
-  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 13px
 }
 
 th {
-  background-color: #d6c1ff; /* purple heading */
-  color: #4b0082;
-  padding: 8px;
+  background: #fbfdff;
+  text-align: left
 }
 
-td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
+.small {
+  font-size: 12px;
+  color: var(--muted)
 }
 
-/* Buttons hover effect and selection */
-#algoButtons .btn {
-  background-color: white;
-  transition: 0.3s;
+.timeline {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 12px 0
 }
 
-#algoButtons .btn:hover {
-  background-color: #f0f0f0;
+.chip {
+  background: #eef2ff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.04)
 }
 
-#algoButtons .btn.active {
-  background-color: #6f42c1;
+.steps {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start
+}
+
+.frame-col {
+  min-width: 140px
+}
+
+.metric-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px
+}
+
+.metric {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #6c5ce7, #5b4ef0);
   color: white;
-  border-color: #6f42c1;
+  text-align: center
+}
+
+.result-table th,
+.result-table td {
+  font-size: 13px
+}
+
+.muted {
+  color: var(--muted)
+}
+
+.danger {
+  background: #ffecec;
+  color: #b91c1c
+}
+
+.success {
+  background: #effaf2;
+  color: #047857
+}
+
+.metric .small {
+  color: white;
 }
