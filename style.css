@@ -1,0 +1,56 @@
+/* Purple shades for cards and headings */
+.bg-purple-card { background-color: #f0e6ff; }
+.bg-purple-heading { background-color: #d6c1ff; color: #4b0082; }
+.text-purple-dark { color: #4b0082; }
+
+.block, .full-width-table {
+  transition: box-shadow 0.3s, transform 0.2s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Hover shadow effect */
+.block:hover, .full-width-table:hover {
+  box-shadow: 0 0 15px rgba(200,200,200,0.5);
+  transform: translateY(-2px);
+}
+
+/* Full-width table but padded */
+.full-width-table {
+  width: calc(100% - 40px);
+  margin-left: 20px;
+}
+
+table {
+  width: 100% !important;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background-color: #d6c1ff; /* purple heading */
+  color: #4b0082;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Buttons hover effect and selection */
+#algoButtons .btn {
+  background-color: white;
+  transition: 0.3s;
+}
+
+#algoButtons .btn:hover {
+  background-color: #f0f0f0;
+}
+
+#algoButtons .btn.active {
+  background-color: #6f42c1;
+  color: white;
+  border-color: #6f42c1;
+}

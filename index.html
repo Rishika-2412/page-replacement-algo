@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Replacement Simulator</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+
+  <div class="container py-4">
+    <h1 class="text-center mb-4 text-purple-dark">Page Replacement Simulator</h1>
+
+    <div class="row g-3">
+      <!-- Left Panel -->
+      <div class="col-lg-6">
+        <div class="card block p-3 bg-purple-card">
+          <h5 class="card-title bg-purple-heading p-2 rounded">Reference String</h5>
+          <input id="referenceString" class="form-control mb-2" placeholder="e.g., 7 0 1 2 0 3 0 4 2 3" />
+          <input id="frames" type="number" class="form-control mb-3" min="1" value="3" />
+
+          <!-- Algorithm Selection Buttons -->
+          <div class="mb-3 d-flex align-items-center">
+            <h6 class="me-3 mb-0">Select Algorithm:</h6>
+            <div id="algoButtons" class="d-flex gap-2">
+              <button type="button" class="btn btn-outline-primary rounded-pill" onclick="selectAlgorithm('FIFO')">FIFO</button>
+              <button type="button" class="btn btn-outline-primary rounded-pill" onclick="selectAlgorithm('LRU')">LRU</button>
+              <button type="button" class="btn btn-outline-primary rounded-pill" onclick="selectAlgorithm('Optimal')">Optimal</button>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary flex-fill" onclick="runSimulation()">Run</button>
+            <button class="btn btn-secondary flex-fill" onclick="resetSimulation()">Reset</button>
+            <button class="btn btn-info flex-fill" onclick="compareAlgorithms()">Compare</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="col-lg-6">
+        <div class="card block p-3 bg-purple-card">
+          <h5 class="card-title bg-purple-heading p-2 rounded">Execution Summary</h5>
+          <div id="executionSummary"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-width Process Table -->
+  <div class="full-width-table mt-4 px-4 py-3">
+    <h5 id="processTableHeading" class="bg-purple-heading p-2 rounded" style="display:none;">Process Table</h5>
+    <div class="table-responsive">
+      <div id="processTable"></div>
+    </div>
+  </div>
+
+  <!-- Full-width Comparison Section -->
+  <div class="full-width-table mt-4 px-4 py-3" id="comparisonSection" style="display:none;">
+    <h5 class="bg-purple-heading p-2 rounded">Algorithm Comparison Summary</h5>
+    <div class="table-responsive">
+      <div id="comparisonResults"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
